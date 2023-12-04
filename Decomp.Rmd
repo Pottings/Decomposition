@@ -1,0 +1,27 @@
+---
+title: "Untitled"
+author: "Shevon Pottinger"
+date: "2023-11-23"
+output: html_document
+---
+
+```{r}
+library(TTR)
+library(fpp)
+library(fpp2)
+library(readr)
+library(readxl)
+HospitalityEmployees <- read.csv("~/Downloads/HospitalityEmployees.csv", stringsAsFactors=TRUE)
+plot(HospitalityEmployees)
+HospitalityEmployees_Raw <- HospitalityEmployees$HospitalityEmployees
+plot(HospitalityEmployees_ts)
+stl_decomp <- stl(HospitalityEmployees_ts,s.window ="periodic")
+plot(stl_decomp, main = 'Decomposition plot')
+decom <- decompose(HospitalityEmployees_ts)
+decom$type
+decom$figure
+
+
+
+```
+
